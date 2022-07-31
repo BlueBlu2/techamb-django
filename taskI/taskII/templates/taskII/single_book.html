@@ -1,0 +1,32 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+<h1>Hello at taskII</h1>
+
+<div class="container  fw-bold text-center">
+    <div class="row m-5">
+        <div class="col-12">
+            <h3>book name: <span>{{book}}</span></h3>
+        </div>
+        <div class="col-12">
+            <h4>added to site at: <span>{{book.created}}</span></h4>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-3">
+            <p>published at: <span>{{book.publish_date}}</span></p>
+        </div>
+        <div class="col-3">
+            <p>price: <span>{{book.price}}</span></p>
+        </div>
+        <div class="col-3">
+            <p>appropriate for: <span>{{book.appropriate}}</span></p>
+        </div>
+        <div class="col-3">
+            <p>Author: <a href="{% url 'single_author' book.author.id %}">{{book.author}}</a></p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

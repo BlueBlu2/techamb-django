@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<dev class="container">
+<h1>Hello, World</h1>
+
+<hr>
+
+{% for book in books%}
+<a href="{% url 'book' book %}">{{book.0}}</a> <br>
+{% endfor%}
+</dev>
+{% endblock %}

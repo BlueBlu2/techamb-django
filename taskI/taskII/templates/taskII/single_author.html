@@ -1,0 +1,29 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+<h1>Hello at taskII</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>{{author}}</h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-12 fw-bolder m-5">Books</div>
+        <div class="col-4">
+            <p>book name</p>
+        </div>
+        <div class="col-4">published at</div>
+        <div class="col-4">price</div>
+        {% for book in books%}
+        <div class="col-4">
+            <a href="{% url 'single_book' book.id %}">{{book}}</a>
+        </div>
+        <div class="col-4">{{book.publish_date}}</div>
+        <div class="col-4">{{book.price}}</div>
+        {% endfor%}
+    </div>
+</div>
+
+{% endblock %}

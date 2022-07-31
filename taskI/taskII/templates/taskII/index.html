@@ -1,0 +1,10 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+<h1>Hello at taskII</h1>
+
+{% for book in books%}
+<a href="{% url 'single_book' book.id %}">{{book}}</a> <br>
+{% endfor%}
+
+{% endblock %}

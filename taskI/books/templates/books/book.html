@@ -1,0 +1,19 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-6"><p>{{bookname.0}}</p></div>
+        <div class="col-6">
+            {% with bookname.0|slugify as image_path %}
+            {% with 'images/'|add:image_path|add:'.jpeg' as image_path %}
+                <img style="width:250px;" src="{% static image_path %}" alt={{bookname.1}} />
+            {% endwith %}
+            {% endwith %}
+        </div>
+    </div>
+    <div class="col-10 mt-3">
+        <p>{{bookname.2}}</p>
+    </div>
+</div>
+{% endblock %}
